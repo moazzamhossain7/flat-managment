@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             'last_name' => 'Hossain',
             'email' => 'arif@gmail.com',
             'password' => bcrypt('psssword'),
-            'role' => 'super_admin',
+            'role' => 'landlord',
             'phone' => '880 1826 958247',
             'profession' => 'Property Agent',
             'address' => '58/A Sukrabad, Dhaka-1207, Bangladesh',

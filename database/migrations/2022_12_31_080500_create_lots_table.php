@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('beds')->nullable();
             $table->string('baths')->nullable();
             $table->string('built')->nullable();
-            $table->double('price', 8, 2)->nullable();
+            $table->double('price', 12, 2)->nullable();
             $table->string('rent_type')->default('monthly')->comment('monthly, yearly');
             $table->string('feature')->nullable();
             $table->text('amenities')->nullable();

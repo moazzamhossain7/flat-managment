@@ -92,8 +92,8 @@
                                 <li><label>Year built:</label> <span>{{ $flat->built }}</span></li>
                             </ul>
                             <ul>
-                                <li><label>Lot Area:</label> <span>F-{{ $flat->property_id }} </span></li>
-                                <li><label>Lot dimensions:</label> <span>{{ $flat->lot_area }} sqft</span></li>
+                                <li><label>Type:</label> <span class="text-capitalize">{{ $flat->type }} </span></li>
+                                <li><label>Lot Area:</label> <span>{{ $flat->lot_area }} sqft</span></li>
                                 <li><label>Beds:</label> <span>{{ $flat->beds }}</span></li>
                                 <li><label>Price:</label> <span>&#2547; {{ floor($flat->price) }}</span></li>
                                 <li><label>Property Status:</label> <span>@if($flat->status == 'rented') Rented @else For Rent @endif
@@ -118,7 +118,7 @@
                                             @if(in_array('gym', $flat->amenities))
                                             <li>
                                                 <label class="checkbox-item">Gym
-                                                    <input type="checkbox" checked="checked">
+                                                    <input type="checkbox" disabled checked="checked">
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </li>
@@ -127,7 +127,7 @@
                                             @if(in_array('microwave', $flat->amenities))
                                             <li>
                                                 <label class="checkbox-item">Microwave
-                                                    <input type="checkbox" checked="checked">
+                                                    <input type="checkbox" disabled checked="checked">
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </li>
@@ -136,7 +136,7 @@
                                             @if(in_array('swimming-pool', $flat->amenities))
                                             <li>
                                                 <label class="checkbox-item">Swimming Pool
-                                                    <input type="checkbox" checked="checked">
+                                                    <input type="checkbox" disabled checked="checked">
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </li>
@@ -151,7 +151,7 @@
                                             @if(in_array('wifi', $flat->amenities))
                                             <li>
                                                 <label class="checkbox-item">WiFi
-                                                    <input type="checkbox" checked="checked">
+                                                    <input type="checkbox" disabled checked="checked">
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </li>
@@ -160,7 +160,7 @@
                                             @if(in_array('barbeque', $flat->amenities))
                                             <li>
                                                 <label class="checkbox-item">Barbeque
-                                                    <input type="checkbox" checked="checked">
+                                                    <input type="checkbox" disabled checked="checked">
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </li>
@@ -169,7 +169,7 @@
                                             @if(in_array('recreation', $flat->amenities))
                                             <li>
                                                 <label class="checkbox-item">Recreation
-                                                    <input type="checkbox" checked="checked">
+                                                    <input type="checkbox" disabled checked="checked">
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </li>
@@ -178,7 +178,7 @@
                                             @if(in_array('fridge', $flat->amenities))
                                             <li>
                                                 <label class="checkbox-item">Refrigerator
-                                                    <input type="checkbox" checked="checked">
+                                                    <input type="checkbox" disabled checked="checked">
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </li>
@@ -193,7 +193,7 @@
                                             @if(in_array('washer', $flat->amenities))
                                             <li>
                                                 <label class="checkbox-item">Washer
-                                                    <input type="checkbox" checked="checked">
+                                                    <input type="checkbox" disabled checked="checked">
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </li>
@@ -202,7 +202,7 @@
                                             @if(in_array('security', $flat->amenities))
                                             <li>
                                                 <label class="checkbox-item">24x7 Security
-                                                    <input type="checkbox" checked="checked">
+                                                    <input type="checkbox" disabled checked="checked">
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </li>
@@ -211,7 +211,7 @@
                                             @if(in_array('court', $flat->amenities))
                                             <li>
                                                 <label class="checkbox-item">Basketball Cout
-                                                    <input type="checkbox" checked="checked">
+                                                    <input type="checkbox" disabled checked="checked">
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </li>
@@ -220,7 +220,7 @@
                                             @if(in_array('fireplace', $flat->amenities))
                                             <li>
                                                 <label class="checkbox-item">Fireplace
-                                                    <input type="checkbox" checked="checked">
+                                                    <input type="checkbox" disabled checked="checked">
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </li>
@@ -241,7 +241,7 @@
                                 allowfullscreen
                                 referrerpolicy="no-referrer-when-downgrade"
                                 src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD3bjmSKddbmjN0Yml0-kOmP1fZ50cRfA0
-                                    &q={{ $flat->location->name }}">
+                                    &q={{ $flat->address }}">
                             </iframe>
                         </div>
                         

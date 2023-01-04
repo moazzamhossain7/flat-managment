@@ -17,7 +17,7 @@ class Dashboard extends Component
     use WithFileUploads;
 
     public $user;
-    public $flats;
+    // public $flats;
     public $locations;
     public $tenantFlats;
 
@@ -78,10 +78,11 @@ class Dashboard extends Component
 
         $this->form = $this->makeBlankForm();
         $this->locations = Location::optionLists();
-        if ($this->user->role == 'landlord') {
-            $this->flats = Lot::with('lotPictures', 'location')->where('owner_id', $this->user->id)->get();
+
+        if ($this->user->role == 'tenant') {
+            $this->tenantFlats = LotTenant::with('lot.lotPictures', 'lot.location')->where('tenant_id', $this->user->id)->latest()->get();
         } else {
-            $this->tenantFlats = LotTenant::with('lot.lotPictures', 'lot.location')->where('tenant_id', $this->user->id)->get();
+            // $this->flats = Lot::with('lotPictures', 'location')->where('owner_id', $this->user->id)->latest()->get();
         }
     }
 
@@ -155,7 +156,7 @@ class Dashboard extends Component
             $this->form = $this->makeBlankForm();
             $this->reset('photos');
             $this->changeTab('properties');
-
+            
             $this->notify('Your flat added successfully.');
         } catch (\Exception $e) {
             $this->notify($e->getMessage(), 'danger');
@@ -187,7 +188,6 @@ class Dashboard extends Component
         try {
             Lot::findOrFail($id)->delete();
 
-            $this->emit('refreshFlats');
             $this->notify('Flat deleted successfully.');
         } catch (\Exception $e) {
             $this->notify($e->getMessage(), 'danger');
@@ -196,6 +196,8 @@ class Dashboard extends Component
 
     public function render()
     {
-        return view('livewire.frontend.dashboard')->layout('layouts.frontend.app');
+        return view('livewire.frontend.dashboard', [
+            'flats' => Lot::with('lotPictures', 'location')->where('owner_id', $this->user->id)->latest()->get()
+        ])->layout('layouts.frontend.app');
     }
 }
