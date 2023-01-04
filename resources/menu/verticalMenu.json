@@ -1,0 +1,76 @@
+{
+  "menu": [
+    {
+      "url": "/",
+      "name": "Dashboard",
+      "icon": "menu-icon tf-icons bx bx-home-circle",
+      "slug": "dashboard"
+    },
+    {
+      "menuHeader": "Apps"
+    },
+    {
+      "name": "Subscribers",
+      "icon": "menu-icon tf-icons bx bx-group",
+      "slug": "subscribers",
+      "role": "super_admin",
+      "url": "/subscribers"
+    },
+    {
+      "name": "Users Management",
+      "icon": "menu-icon tf-icons bx bx-group",
+      "slug": "users",
+      "role": "org_admin",
+      "url": "/users"
+    },
+    {
+      "name": "Types",
+      "icon": "menu-icon tf-icons bx bx-layer-plus",
+      "slug": "types",
+      "role": "org_admin",
+      "url": "/types"
+    },
+    {
+      "name": "Categories",
+      "icon": "menu-icon tf-icons bx bx-customize",
+      "slug": "categories",
+      "role": "org_admin",
+      "url": "/categories"
+    },
+    {
+      "name": "Brands",
+      "icon": "menu-icon tf-icons bx bx-group",
+      "slug": "brands",
+      "role": "org_admin",
+      "url": "/brands"
+    },
+    {
+      "name": "Suppliers",
+      "icon": "menu-icon tf-icons bx bx-user-pin",
+      "slug": "suppliers",
+      "role": "org_admin",
+      "url": "/suppliers"
+    },
+    {
+      "name": "Products",
+      "icon": "menu-icon tf-icons bx bx-cart-alt",
+      "slug": "products",
+      "role": "org_admin",
+      "url": "/products"
+    },
+    {
+      "name": "Stock Received",
+      "icon": "menu-icon tf-icons bx bxs-cart-download",
+      "slug": "purchases",
+      "role": "org_admin",
+      "url": "/stock-received"
+    },
+    {
+      "name": "Productions",
+      "icon": "menu-icon tf-icons bx bxs-doughnut-chart",
+      "slug": "consumptions",
+      "role": "org_admin",
+      "url": "/productions"
+    }
+  ]
+}
