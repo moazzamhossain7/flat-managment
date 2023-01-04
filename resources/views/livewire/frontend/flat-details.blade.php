@@ -59,6 +59,12 @@
                                     @endif
                                 </li>
 
+                                <li class="ltn__blog-category">
+                                    <h5 class="ltn__secondary-color">
+                                        <span>&#2547; {{ floor($flat->price) }}<label>/{{ ucwords($flat->rent_type) }}</label></span>
+                                    </h5>
+                                </li>
+
                                 <li class="ltn__blog-date">
                                     <i class="far fa-calendar-alt"></i> {{ dateFormat($flat->created_at) }}
                                 </li>

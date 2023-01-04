@@ -27,9 +27,10 @@ class UserFactory extends Factory
             'phone' => $this->faker->phoneNumber(),
             'address' => $this->faker->address(),
             'profession' => $this->faker->jobTitle(),
-            'about' => $this->faker->text(1000),
+            'about' => $this->faker->text(300),
             'status' => true,
-            'role' => $this->faker->randomElement(['landlord', 'tenant']),
+            // 'role' => $this->faker->randomElement(['landlord', 'tenant']),
+            'role' => 'tenant',
             'avatar' => "/assets/frontend/img/users/". $this->faker->randomElement([1, 2, 3, 4, 5, 6, 7, 8]) . ".jpg",
             'social_links' => [
                 'facebook' => 'https://facebook.com',
