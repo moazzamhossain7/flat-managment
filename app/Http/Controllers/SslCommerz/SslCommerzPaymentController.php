@@ -53,7 +53,7 @@ class SslCommerzPaymentController extends Controller
             'lot_id' => $lot->id, // You cant not pay less than 10
             'user_id' => $user->id,
             'name' => $user->first_name . " " . $user->last_name,
-            'phone' => $user->phone,
+            'phone' => $user->phone ?? '8801827653847',
             'is_web' => true,
         ]);
     }

@@ -52,7 +52,7 @@
                                             @endcan
 
                                             <a class="@if($currentTab == 'notification') active show @endif" data-bs-toggle="tab" href="#notification" wire:click="changeTab('notification')">
-                                                Notifications <i class="fa-solid fa-money-check-dollar"></i>
+                                                Rent Payment <i class="fa-solid fa-money-check-dollar"></i>
                                             </a>
 
                                             <a class="@if($currentTab == 'accounts') active show @endif" data-bs-toggle="tab" href="#accounts" wire:click="changeTab('accounts')">

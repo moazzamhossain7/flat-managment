@@ -37,10 +37,19 @@
                             <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">About Us</h6>
                             <h1 class="section-title">The Leading Real Estate
                                 Rental Marketplace<span>.</span></h1>
-                            <p>Over 39,000 people work for us in more than 70 countries all over the
-                                This breadth of global coverage, combined with specialist services</p>
+                            <p>Our journey begins here ,
+              We are the property solutions provider in Bangladesh .
+              We cater to the needs of those seeking real estate services,
+               with a promise to make property search, renting & buying easier
+               than ever. We offer the easiest platform that enables anyone to buy,
+               rent or sell properties in the country. We started in a area , there a
+               landlord who has many house . So, in a huge property there are many flat
+                over 60 to 80 flats. In this scenario , as a one owner its hard and difficult
+                to manages all renters , rents , utility bills , fixing damage property’s , security
+                , taxes and others .  So ,we are property solution provider and that’s why we decided
+                to build a web application  for him to maintain there all problems .</p>
                         </div>
-                        <ul class="ltn__list-item-half clearfix">
+                        <!-- <ul class="ltn__list-item-half clearfix">
                             <li>
                                 <i class="flaticon-home-2"></i>
                                 Smart Home Design
@@ -57,11 +66,10 @@
                                 <i class="flaticon-secure"></i>
                                 Complete 24/7 Security
                             </li>
-                        </ul>
-                        <div class="ltn__callout bg-overlay-theme-05  mt-30">
-                            <p>"Enimad minim veniam quis nostrud exercitation <br>
-                                llamco laboris. Lorem ipsum dolor sit amet" </p>
-                        </div>
+                        </ul> -->
+                        <!-- <div class="ltn__callout bg-overlay-theme-05  mt-30">
+                            <p>"Home is the starting place of love, hope and dreams" </p>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -70,7 +78,7 @@
     <!-- ABOUT US AREA END -->
 
     <!-- FEATURE AREA START ( Feature - 6) -->
-    <div class="ltn__feature-area section-bg-1 pt-120 pb-90 mb-120---">
+    <!-- <div class="ltn__feature-area section-bg-1 pt-120 pb-90 mb-120---">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -170,10 +178,10 @@
                         </div>
                     </div>
                 </div>
-                <!--  -->
+                
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- FEATURE AREA END -->
 
     <!-- TEAM AREA START (Team - 3) -->
@@ -182,8 +190,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title-area ltn__section-title-2--- text-center">
-                        <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">Team</h6>
-                        <h1 class="section-title">Property Agents</h1>
+                        <!-- <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color">Team</h6> -->
+                        <h1 class="section-title">Our Team</h1>
                     </div>
                 </div>
             </div>
@@ -194,7 +202,7 @@
                             <img src="{{ asset('/assets/frontend/img/users/7.jpg') }}" alt="Image">
                         </div>
                         <div class="team-info">
-                            <h4><a href="team-details.html">Rosalina D. William</a></h4>
+                            <h4><a href="team-details.html">MD Arif Hoissain</a></h4>
                             <h6 class="ltn__secondary-color">Real Estate Broker</h6>
                             <div class="ltn__social-media">
                                 <ul>
@@ -212,7 +220,7 @@
                             <img src="{{ asset('/assets/frontend/img/users/6.jpg') }}" alt="Image">
                         </div>
                         <div class="team-info">
-                            <h4><a href="team-details.html">Kelian Anderson</a></h4>
+                            <h4><a href="team-details.html">Abu Sayed Rasel</a></h4>
                             <h6 class="ltn__secondary-color">Selling Agents</h6>
                             <div class="ltn__social-media">
                                 <ul>
@@ -224,7 +232,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6">
+                <!-- <div class="col-lg-4 col-sm-6">
                     <div class="ltn__team-item ltn__team-item-3---">
                         <div class="team-img">
                             <img src="{{ asset('/assets/frontend/img/users/5.jpg') }}" alt="Image">
@@ -241,7 +249,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

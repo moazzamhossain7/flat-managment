@@ -69,9 +69,9 @@
                                     <i class="far fa-calendar-alt"></i> {{ dateFormat($flat->created_at) }}
                                 </li>
 
-                                <li>
+                                <!-- <li>
                                     <a href="javascript:void(0)"><i class="far fa-comments"></i>{{ count($flat->comments) }} Comments</a>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
 
@@ -245,7 +245,7 @@
                             </iframe>
                         </div>
                         
-                        <div class="ltn__shop-details-tab-content-inner--- ltn__shop-details-tab-inner-2 ltn__product-details-review-inner mb-60">
+                        <!-- <div class="ltn__shop-details-tab-content-inner--- ltn__shop-details-tab-inner-2 ltn__product-details-review-inner mb-60">
                             <h4 class="title-2">Customer Reviews</h4>
                             <div class="product-ratting">
                                 <ul>
@@ -257,9 +257,9 @@
                                     <li class="review-total fw-600"> <a href="javascript:void(0)"> ( {{ count($flat->comments) }} Reviews )</a></li>
                                 </ul>
                             </div>
-                            <hr>
+                            <hr> -->
                             <!-- comment-area -->
-                            <div class="ltn__comment-area mb-30">
+                            <!-- <div class="ltn__comment-area mb-30">
                                 <div class="ltn__comment-inner">
                                     <ul>
                                         @php $totalRattings = 0; @endphp
@@ -272,8 +272,8 @@
                                                     @else
                                                     <img src="{{ asset('/assets/frontend/img/testimonial/1.jpg') }}" alt="Image">
                                                     @endif
-                                                </div>
-                                                <div class="ltn__commenter-comment">
+                                                </div> -->
+                                                <!-- <div class="ltn__commenter-comment">
                                                     <h6><a href="javascript:void(0)">{{ $comment->full_name }}</a></h6>
                                                     <div class="product-ratting">
                                                         <ul>
@@ -298,7 +298,7 @@
                                         @endforeach
                                     </ul>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- comment-reply -->
                             <!-- <div class="ltn__comment-reply-area ltn__form-box mb-30">
                                 <form action="#">
@@ -343,11 +343,11 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="col-lg-4">
+             
+                 <div class="col-lg-4">
                     <aside class="sidebar ltn__shop-sidebar ltn__right-sidebar---">
                         <!-- Author Widget -->
-                        <div class="widget ltn__author-widget">
+                         <div class="widget ltn__author-widget">
                             <div class="ltn__author-widget-inner text-center">
                                 @if($flat->owner->avatar)
                                 <img src="{{ asset('/assets/frontend/img/components/landlord.jpg') }}" alt="Image">
@@ -370,7 +370,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div> 
 
                         @if($flat->status != 'rented' && optional(auth()->user())->role != 'landlord')
                         <!-- Search Widget -->
@@ -378,7 +378,7 @@
                             <h4 class="ltn__widget-title ltn__widget-title-border-2 text-unset">Start with this property</h4>
                             <a type="button" wire:click="bookApartment" class="btn theme-btn-1 btn-block">BOOK APARTMENT</a>
                         </div>
-                        @endif
+                        @endif 
 
                         <!-- Social Media Widget -->
                         <div class="widget ltn__social-media-widget">
@@ -392,13 +392,13 @@
                                     
                                 </ul>
                             </div>
-                        </div>
+                        </div> 
 
-                    </aside>
+                    </aside> 
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
     <!-- SHOP DETAILS AREA END -->
 
     <!-- PRODUCT SLIDER AREA START -->

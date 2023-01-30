@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
             'first_name' => 'Arif',
             'last_name' => 'Hossain',
             'email' => 'arif@gmail.com',
-            'password' => bcrypt('psssword'),
+            'password' => bcrypt('password'),
             'role' => 'landlord',
             'phone' => '880 1826 958247',
             'profession' => 'Property Agent',

@@ -47,7 +47,7 @@ class Order extends Model
     public static function findOrderByTranId($tranId)
     {
         return self::where('transaction_id', $tranId)
-            ->select('id', 'transaction_id', 'status', 'amount', 'user_id', 'is_backend_payment', 'pay_for', 'payload')
+            ->select('id', 'lot_id', 'transaction_id', 'status', 'amount', 'user_id', 'is_backend_payment', 'pay_for', 'payload')
             ->firstOrFail();
     }
 

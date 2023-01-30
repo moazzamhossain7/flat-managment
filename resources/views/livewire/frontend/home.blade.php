@@ -12,21 +12,21 @@
                             <div class="col-lg-12 align-self-center">
                                 <div class="slide-item-info">
                                     <div class="slide-item-info-inner ltn__slide-animation">
-                                        <h6 class="slide-sub-title white-color--- animated">
+                                        <!-- <h6 class="slide-sub-title white-color--- animated">
                                             <span><i class="fas fa-home"></i></span> Real Estate Agency
-                                        </h6>
+                                        </h6> -->
                                         <h1 class="slide-title animated">
                                             Find Your Dream <br />
                                             House By Us
                                         </h1>
-                                        <div class="slide-brief animated">
+                                        <!-- <div class="slide-brief animated">
                                             <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
                                             </p>
                                         </div>
                                         <div class="btn-wrapper animated">
                                             <a href="shop.html" class="theme-btn-1 btn btn-effect-1">Make An Enquiry</a>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -42,21 +42,21 @@
                             <div class="col-lg-12 align-self-center">
                                 <div class="slide-item-info">
                                     <div class="slide-item-info-inner ltn__slide-animation">
-                                        <h6 class="slide-sub-title white-color--- animated">
+                                        <!-- <h6 class="slide-sub-title white-color--- animated">
                                             <span><i class="fas fa-home"></i></span> Real Estate Agency
-                                        </h6>
+                                        </h6> -->
                                         <h1 class="slide-title animated">
                                             Find Your Dream <br />
                                             House By Us
                                         </h1>
-                                        <div class="slide-brief animated">
+                                        <!-- <div class="slide-brief animated">
                                             <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
                                             </p>
                                         </div>
                                         <div class="btn-wrapper animated">
                                             <a href="shop.html" class="theme-btn-1 btn btn-effect-1">Make An Enquiry</a>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -72,21 +72,21 @@
                             <div class="col-lg-12 align-self-center">
                                 <div class="slide-item-info">
                                     <div class="slide-item-info-inner ltn__slide-animation">
-                                        <h6 class="slide-sub-title white-color--- animated">
+                                        <!-- <h6 class="slide-sub-title white-color--- animated">
                                             <span><i class="fas fa-home"></i></span> Real Estate Agency
-                                        </h6>
+                                        </h6> -->
                                         <h1 class="slide-title animated">
                                             Find Your Dream <br />
                                             House By Us
                                         </h1>
-                                        <div class="slide-brief animated">
+                                        <!-- <div class="slide-brief animated">
                                             <p>
                                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
                                             </p>
                                         </div>
                                         <div class="btn-wrapper animated">
                                             <a href="shop.html" class="theme-btn-1 btn btn-effect-1">Make An Enquiry</a>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -376,6 +376,7 @@
     <!-- COUNTER UP AREA END -->
 
     <!-- TESTIMONIAL AREA START -->
+    <!--
     <div class="ltn__testimonial-area ltn__testimonial-4 pt-115 pb-100 plr--9">
         <div class="container-fluid">
             <div class="row">
@@ -467,11 +468,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- TESTIMONIAL AREA END -->
 
     <!-- CALL TO ACTION START (call-to-action-6) -->
-    <div class="ltn__call-to-action-area call-to-action-6 before-bg-bottom" data-bs-bg="img/1.jpg--">
+    <!-- <div class="ltn__call-to-action-area call-to-action-6 before-bg-bottom" data-bs-bg="img/1.jpg--">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -487,6 +488,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- CALL TO ACTION END -->
 </div>

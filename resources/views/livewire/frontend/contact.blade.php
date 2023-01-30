@@ -32,8 +32,7 @@
                             <img src="{{ asset('/assets/frontend/img/icons/10.png') }}" alt="Icon Image">
                         </div>
                         <h3>Email Address</h3>
-                        <p>info@webmail.com <br>
-                            jobs@webexample.com</p>
+                        <p>arproperties@hotmail.com</p>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -42,7 +41,7 @@
                             <img src="{{ asset('/assets/frontend/img/icons/11.png') }}" alt="Icon Image">
                         </div>
                         <h3>Phone Number</h3>
-                        <p>+0123-456789 <br> +987-6543210</p>
+                        <p>+01744898255 <br> +880 1714 278193</p>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -51,8 +50,8 @@
                             <img src="{{ asset('/assets/frontend/img/icons/12.png') }}" alt="Icon Image">
                         </div>
                         <h3>Office Address</h3>
-                        <p>18/A, New Born Town Hall <br>
-                            New York, US</p>
+                        <p>Shukrabad, Dhanmondi 32 <br>
+                        Dhaka</p>
                     </div>
                 </div>
             </div>

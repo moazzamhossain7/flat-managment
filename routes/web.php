@@ -34,9 +34,10 @@ Route::middleware('guest')->group(function () {
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
     Route::get('/checkout/{flatId}', Checkout::class);
-    Route::get('/payment-callback/{status}', [DashboardController::class, 'paymentCallback']);
+    
 });
 
+Route::get('/payment-callback/{status}', [DashboardController::class, 'paymentCallback']);
 Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
 Route::post('/success', [SslCommerzPaymentController::class, 'success']);
 Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);

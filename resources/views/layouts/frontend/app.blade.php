@@ -92,5 +92,7 @@
                 $(".alert").delay(4500).fadeOut('slow');
             });
         </script>
+
+        @stack('scripts')
     </body>
 </html>
