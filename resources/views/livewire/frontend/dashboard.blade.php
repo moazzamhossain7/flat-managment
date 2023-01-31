@@ -51,8 +51,14 @@
                                             </a>
                                             @endcan
 
-                                            <a class="@if($currentTab == 'notification') active show @endif" data-bs-toggle="tab" href="#notification" wire:click="changeTab('notification')">
-                                                Rent Payment <i class="fa-solid fa-money-check-dollar"></i>
+                                            @can('visible', 'tenant')
+                                            <a class="@if($currentTab == 'payment') active show @endif" data-bs-toggle="tab" href="#payment" wire:click="changeTab('payment')">
+                                                Monthly Payment <i class="fa-solid fa-money-check-dollar"></i>
+                                            </a>
+                                            @endcan
+
+                                            <a class="@if($currentTab == 'payment-history') active show @endif" data-bs-toggle="tab" href="#payment-history" wire:click="changeTab('payment-history')">
+                                                Payment History <i class="fa-solid fa-money-check-dollar"></i>
                                             </a>
 
                                             <a class="@if($currentTab == 'accounts') active show @endif" data-bs-toggle="tab" href="#accounts" wire:click="changeTab('accounts')">
@@ -591,6 +597,141 @@
                                             </form>
                                         </div>
                                         @endcan
+
+                                        @can('visible', 'tenant')
+                                        <!-- monthly payment -->
+                                        <div class="tab-pane fade @if($currentTab == 'payment') active show @endif" id="ltn_tab_1_8">
+                                            <div class="ltn__myaccount-tab-content-inner">
+                                                <p class="text-center pt-5">
+                                                    Hello <strong>{{ $user->fullName() }}</strong> 
+                                                    From your account monthly <strong>payment</strong> section you can pay out flat monthly rent.
+                                                </p>
+
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="ltn__checkout-payment-method mt-50">
+                                                            <h6 class="title">Select Flat For Payment ({{ date('F') }})</h6>
+                                                            <div id="checkout_accordion_1">
+                                                                <div class="form-group mb-4">
+                                                                    <select class="custom-search"
+                                                                        wire:model="flatId"
+                                                                    >
+                                                                        <option value="" selected>Select Flat</option>
+                                                                        @foreach($paymentDueFlats as $flat)
+                                                                        <option value="{{ $flat->lot_id }}">{{ $flat->lot->name }}</option>
+                                                                        @endforeach
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="ltn__payment-note mt-30 mb-30">
+                                                                <p>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.</p>
+                                                            </div>
+
+                                                            <button
+                                                                type="button"
+                                                                class="btn theme-btn-1 btn-effect-1 text-uppercase mt-20"
+                                                                id="sslczPayBtn"
+                                                                postdata="{}"
+                                                                token="{{ $token }}"
+                                                                order="{{ $order }}"
+                                                                endpoint="{{ url('/pay-via-ajax?flat='.$flatId) }}">
+                                                                Pay Now
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            @if($flatId)
+                                            <script>
+                                                function loadPayment() {
+                                                    var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
+                                                    script.src = "https://sandbox.sslcommerz.com/embed.min.js?" + Math.random().toString(36).substring(7);
+                                                    tag.parentNode.insertBefore(script, tag);
+                                                }
+                                                loadPayment();
+                                            </script>
+                                            @endif
+                                        </div>
+                                        @endcan
+
+                                        <!-- payment-history -->
+                                        <div class="tab-pane fade @if($currentTab == 'payment-history') active show @endif" id="ltn_tab_1_8">
+                                            <div class="ltn__myaccount-tab-content-inner">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="ltn__checkout-payment-method mt-50">
+                                                            <h4 class="title-2">Payment History</h4>
+
+                                                            <table class="table table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col"> Property </th>
+                                                                        <th scope="col"></th>
+                                                                        <th scope="col">Payment</th>
+                                                                    </tr>
+                                                                </thead>
+
+                                                                <tbody>
+                                                                    @forelse($payments as $payment)
+                                                                    <tr>
+                                                                        <td class="ltn__my-properties-img" style="width: auto">
+                                                                            <a href="{{ url('/flat/' . $payment->lot->id) }}">
+                                                                                @if($payment->lot->lotPictures)
+                                                                                <img src="{{ asset(optional($payment->lot->lotPictures)[0]->path) }}" class="tenant-flat-img" alt="#" style="height: 90px" />
+                                                                                @else
+                                                                                <img src="{{ asset('/assets/frontend/img/lots/default.jpg') }}" class=" tenant-flat-img" alt="#" style="height: 90px" />
+                                                                                @endif
+                                                                            </a>
+                                                                        </td>
+
+                                                                        <td>
+                                                                            <div class="ltn__my-properties-info">
+                                                                                <h6 class="mb-0">
+                                                                                    <a href="{{ url('/flat/' . $payment->lot->id) }}">
+                                                                                        {{ $payment->lot->name }}
+                                                                                    </a>
+                                                                                </h6>
+                                                                                <small><i class="icon-placeholder"></i> {{ $payment->lot->address }}</small>
+                                                                                
+                                                                                <div class="product-price ltn__secondary-color">
+                                                                                @can('visible', 'landlord')
+                                                                                    <strong>Paid By:</strong>
+                                                                                    {{ $payment->name }}
+                                                                                @endcan
+                                                                                @can('visible', 'tenant')
+                                                                                    <strong class="text-capitalize">
+                                                                                    {{ $payment->lot->type }}</strong>
+                                                                                @endcan
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td class="text-truncate">
+                                                                        <div class="ltn__my-properties-info">
+                                                                                <h6 class="mb-0">
+                                                                                {{ dateFormat($payment->created_at, 'F, Y') }}
+                                                                                </h6>
+                                                                                <small>ORD: {{ $payment->transaction_id}}</small>
+
+                                                                                <div class="product-price ltn__secondary-color">
+                                                                                    <span>&#2547; {{ floor($payment->amount) }}</span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    @empty
+                                                                    <tr>
+                                                                        <td align="center" colspan="4">No payments found....</td>
+                                                                    </tr>
+                                                                    @endif
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         
                                         <!-- notifications -->
                                         <div class="tab-pane fade @if($currentTab == 'notification') active show @endif" id="ltn_tab_1_8">

@@ -85,12 +85,14 @@ class SslCommerzPaymentController extends Controller
                     Here you can also sent sms or email for successfull transaction to customer
                     */
                     Order::updateOrderStatus($tran_id, 'Processing');
-                    LotTenant::create([
-                        'lot_id' => $order->lot_id,
-                        'tenant_id' => $order->user_id,
-                        'start_date' => date('Y-m-d'),
-                        'agreed_rent' => $order->amount,
-                    ]);
+                    if (!LotTenant::where('lot_id', $order->lot_id)->where('tenant_id', $order->user_id)->first()) {
+                        LotTenant::create([
+                            'lot_id' => $order->lot_id,
+                            'tenant_id' => $order->user_id,
+                            'start_date' => date('Y-m-d'),
+                            'agreed_rent' => $order->amount,
+                        ]);
+                    }
 
                     TenantPayment::create([
                         'lot_id' => $order->lot_id,

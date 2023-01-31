@@ -64,4 +64,8 @@ class Order extends Model
             $order->save();
         }
     }
+
+    public function lot() {
+        return $this->belongsTo(Lot::class);
+    }
 }

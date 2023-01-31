@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Frontend;
 
 use Livewire\Component;
 use App\Models\Lot;
+use App\Models\Order;
 use App\Models\LotPicture;
 use App\Models\User;
 use App\Models\Location;
@@ -17,9 +18,11 @@ class Dashboard extends Component
     use WithFileUploads;
 
     public $user;
-    // public $flats;
+    public $flats;
     public $locations;
     public $tenantFlats;
+    public $paymentDueFlats;
+    public $payments;
 
     public $first_name;
     public $last_name;
@@ -34,6 +37,10 @@ class Dashboard extends Component
     public Lot $form;
     public $photos = [];
     public $amenities = [];
+
+    public $flatId;
+    public $token;
+    public $order;
 
     public $currentTab = 'dashboard';
 
@@ -76,13 +83,35 @@ class Dashboard extends Component
         $this->address = $this->user->address;
         $this->about = $this->user->about;
 
+        $this->token = Str::random(10);
+        $this->order = Str::random(10);
+
         $this->form = $this->makeBlankForm();
         $this->locations = Location::optionLists();
 
         if ($this->user->role == 'tenant') {
             $this->tenantFlats = LotTenant::with('lot.lotPictures', 'lot.location')->where('tenant_id', $this->user->id)->latest()->get();
+            
+            $this->paymentDueFlats = LotTenant::with('lot')
+                ->whereDoesntHave('lot.orders', function($query) {
+                    $query->whereNot('status', 'pending')
+                        ->whereBetween('created_at', [date('Y-m-01'), date('Y-m-t')]);
+                })
+                ->where('tenant_id', $this->user->id)
+                ->get();
+
+            $this->payments = Order::with('lot')
+                ->where('status', 'processing')
+                ->get();
+                // dd($this->payments->toArray());
         } else {
-            // $this->flats = Lot::with('lotPictures', 'location')->where('owner_id', $this->user->id)->latest()->get();
+            $this->flats = Lot::with('lotPictures', 'location')->where('owner_id', $this->user->id)->latest()->get();
+
+            $this->payments = Order::with(['lot' => function($query) {
+                $query->where('owner_id', $this->user->id);
+            }])
+            ->where('status', 'processing')
+            ->get();
         }
     }
 
